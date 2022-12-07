@@ -1,9 +1,9 @@
 ## Availability SLI
 ### The percentage of successful requests over the last 5m
 
-sum (rate(apiserver_request_total{job="apiserver",code!~"5.."}[2d]))
+sum (rate(apiserver_request_total{job="apiserver",code!~"5.."}[5m]))
 /
-sum (rate(apiserver_request_total{job="apiserver"}[2d]))
+sum (rate(apiserver_request_total{job="apiserver"}[5m]))
 
 ## Latency SLI
 ### 90% of requests finish in these times
