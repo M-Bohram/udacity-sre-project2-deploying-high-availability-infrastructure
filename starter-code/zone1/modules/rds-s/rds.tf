@@ -24,8 +24,6 @@ resource "aws_rds_cluster" "udacity_cluster-s" {
   cluster_identifier              = "udacity-db-cluster-s"
   availability_zones              = ["us-west-1a", "us-west-1c"]
   db_cluster_parameter_group_name = aws_rds_cluster_parameter_group.cluster_pg-s.name
-  # database_name                   = "udacityc2"
-  # master_username                 = "udacity"
   replication_source_identifier   = var.primary_db_cluster_arn
   source_region                   = "us-east-2"
   vpc_security_group_ids          = [aws_security_group.db_sg_2.id]
